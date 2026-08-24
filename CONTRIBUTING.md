@@ -5,8 +5,8 @@
 ```bash
 git clone https://github.com/AuroraX-UI/sunlab.git
 cd sunlab
-pnpm install
 source .env.caches   # 加载外部缓存路径环境变量
+pnpm install
 ```
 
 ## 开发命令
@@ -26,8 +26,8 @@ source .env.caches   # 加载外部缓存路径环境变量
 
 所有提交信息必须使用中文。格式：
 
-```
-<类型>: <中文摘要>
+```text
+<类型>: <中文摘要，不超过 50 字>
 
 <正文：动机和上下文>
 ```
@@ -36,7 +36,7 @@ source .env.caches   # 加载外部缓存路径环境变量
 
 ## 分支命名
 
-```
+```text
 feat/<功能简述>     新功能
 fix/<缺陷简述>      缺陷修复
 refactor/<范围>     重构
@@ -62,8 +62,22 @@ docs/<主题>         文档
 - 使用 Biome 替代 ESLint + Prettier。
 - 样式使用 Tailwind CSS v4，不引入 CSS-in-JS。
 - 状态管理使用 Zustand + XState。
+- 模块依赖严格单向：renderer → preload → main → core → shared。
 
 ## 架构决策
 
 重大技术选型变更需要先写 RFC 文档到 `docs/rfc/` 目录。
-参考现有 RFC 了解格式和深度要求。
+参考现有 RFC（0001–0009）了解格式和深度要求。
+
+何时需要写 RFC：
+1. 引入新技术栈或框架
+2. 改变进程间通信模式
+3. 修改安全模型或沙箱策略
+4. 设计新的插件 API
+5. 改变上游同步策略
+
+## 外部缓存路径
+
+所有构建产物存储在 `/Volumes/fushilu/.caches/` 下。
+首次克隆后执行 `source .env.caches` 加载环境变量。
+详见 `.npmrc` 和 `.env.caches` 配置文件。
