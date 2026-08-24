@@ -300,12 +300,15 @@ Tailwind v4 采用 CSS-first 配置，不再需要 `tailwind.config.js`：
 @import "tailwindcss";
 
 @theme {
-  --color-surface: oklch(0.14 0 0);
-  --color-surface-raised: oklch(0.18 0 0);
-  --color-accent: oklch(0.65 0.20 260);
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F7F7F8;
+  --color-surface-tertiary: #F0F0F2;
+  --color-accent: #0066CC;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 ```
+
+完整色彩系统和 UI 组件规格见 [RFC 0010](./0010-ui-design-spec.md)。
 
 配合 Radix UI 使用：
 

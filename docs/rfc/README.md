@@ -13,6 +13,8 @@
 | [0007](./0007-electron-migration.md) | 从 Tauri 2 迁移到 Electron | Accepted | 框架选型变更、性能缓解策略、迁移计划 |
 | [0008](./0008-electron-tech-stack.md) | Electron 技术栈规格 | Draft | 构建系统、UI 框架、状态管理、IPC、测试、打包全链路 |
 | [0009](./0009-electron-phase1-plan.md) | Electron Phase 1 执行计划 | Draft | 任务拆解、PR 序列、验收标准、风险缓解 |
+| [0010](./0010-ui-design-spec.md) | UI 设计规格 | Draft | 明亮主题、布局结构、组件规格、色彩系统、字体和间距 |
+| [0011](./0011-ui-component-architecture.md) | UI 组件架构 | Draft | 组件树、分层复用规则、Hooks/Store 设计、实现顺序 |
 
 ## 阅读顺序
 

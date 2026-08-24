@@ -1,0 +1,97 @@
+/* Sunlab Desktop — 全局样式（Tailwind CSS v4 CSS-first 配置） */
+/* 色彩系统基于 RFC 0010 UI 设计规格 */
+
+@import "tailwindcss";
+
+@theme {
+  /* 基础表面色 */
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F7F7F8;
+  --color-surface-tertiary: #F0F0F2;
+
+  /* 文字色 */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-text-inverse: #FFFFFF;
+
+  /* 交互色 */
+  --color-accent: #0066CC;
+  --color-accent-hover: #0052A3;
+
+  /* 选中态 */
+  --color-selected: #E8E8EA;
+  --color-selected-hover: #DEDEE0;
+
+  /* 代码块 */
+  --color-code-bg: #F6F8FA;
+  --color-code-header: #F0F0F2;
+
+  /* 语义色 */
+  --color-success: #22863A;
+  --color-danger: #D73A49;
+  --color-warning: #B08800;
+
+  /* Diff */
+  --color-diff-add-bg: #F0FFF4;
+  --color-diff-add-text: #22863A;
+  --color-diff-remove-bg: #FFEEF0;
+  --color-diff-remove-text: #D73A49;
+
+  /* 边框 */
+  --color-border: #E1E4E8;
+  --color-border-light: #F0F0F2;
+
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+/* 全局重置和基础样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 滚动条样式（macOS 风格） */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
