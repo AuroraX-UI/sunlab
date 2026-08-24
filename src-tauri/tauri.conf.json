@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Sunlab Codex Desktop",
+  "version": "0.1.0",
+  "identifier": "cloud.revo.sunlab.codex.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "/Volumes/fushilu/.caches/sunlab/desktop/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Sunlab Codex Desktop",
+        "width": 1280,
+        "height": 840,
+        "minWidth": 900,
+        "minHeight": 620
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": false,
+    "targets": "all"
+  }
+}

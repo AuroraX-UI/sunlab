@@ -1,0 +1,18 @@
+[package]
+name = "sunlab-codex-desktop"
+version = "0.1.0"
+description = "A native desktop shell for the Codex app-server"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tokio = { version = "1", features = ["full"] }
+
+[lib]
+name = "sunlab_codex_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]

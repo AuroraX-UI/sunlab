@@ -1,0 +1,40 @@
+{
+  "name": "sunlab-codex-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.31.0",
+  "scripts": {
+    "dev": "vite",
+    "fake:list": "node scripts/fake-codex-app-server.mjs --list-scenarios",
+    "fake:app-server": "node scripts/fake-codex-app-server.mjs",
+    "build": "tsc --noEmit && vite build",
+    "check:rust": "node scripts/run-with-project-cargo-target.cjs cargo check",
+    "test:rust": "node scripts/run-with-project-cargo-target.cjs cargo test",
+    "tauri": "node scripts/run-with-project-cargo-target.cjs node_modules/.bin/tauri",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm test && pnpm typecheck && pnpm build && pnpm test:rust"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.6",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.10",
+    "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

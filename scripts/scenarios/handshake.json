@@ -1,0 +1,11 @@
+{
+  "name": "handshake-json",
+  "steps": [
+    {
+      "respondTo": "initialize",
+      "response": {
+        "platformOs": "fake"
+      }
+    }
+  ]
+}

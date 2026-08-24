@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+release/
+
+# Environment (secrets)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.Darwin
+._*
+
+# Tauri (archived)
+src-tauri/target/
+
+# Electron
+electron-builder-cache/
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+
+# Cache
+.biome/
+*.tsbuildinfo
+
+# OS
+Thumbs.db
+src-tauri/target
