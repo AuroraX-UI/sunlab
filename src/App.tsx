@@ -1,6 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { invoke } from "@tauri-apps/api/core";
-import { listen } from "@tauri-apps/api/event";
+
+/**
+ * 占位 IPC 桥接层。
+ * Phase 1 PR-4 将替换为 preload contextBridge 暴露的 window.sunlab API。
+ * 当前提供相同签名，确保 UI 逻辑在迁移期间不需要改动。
+ */
+async function invoke(_command: string, _args?: Record<string, unknown>): Promise<unknown> {
+  throw new Error("Electron IPC bridge 尚未接入，请等待 Phase 1 完成");
+}
+
+function listen<T>(_event: string, _callback: (payload: { payload: T }) => void): Promise<() => void> {
+  return Promise.resolve(() => {});
+}
 
 type JsonRpcEvent = {
   method?: string;
@@ -61,10 +72,10 @@ export default function App() {
           clientInfo: { name: "sunlab-codex-desktop", title: "Sunlab Codex Desktop", version: APP_VERSION },
         },
       });
-      const response = await invoke<any>("app_server_request", {
+      const response = (await invoke("app_server_request", {
         method: "thread/start",
         params: { cwd: workspace, approvalPolicy: "on-request" },
-      });
+      })) as { thread?: { id?: string }; threadId?: string; id?: string };
       const id = response.thread?.id ?? response.threadId ?? response.id;
       if (!id) throw new Error(`thread/start 未返回线程 ID：${JSON.stringify(response)}`);
       setThreadId(id);
