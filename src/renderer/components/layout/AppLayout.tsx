@@ -1,4 +1,5 @@
 import { Composer } from "@/renderer/components/layout/Composer";
+import { RightPanel } from "@/renderer/components/layout/RightPanel";
 import { Sidebar } from "@/renderer/components/layout/Sidebar";
 import { TopBar } from "@/renderer/components/layout/TopBar";
 import { useUiStore } from "@/renderer/stores/ui-store";
@@ -20,7 +21,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
         <main className="min-h-0 flex-1 overflow-y-auto">{children}</main>
         <Composer />
       </div>
-      {rightPanelVisible && <aside className="hidden w-[280px] shrink-0 border-l border-[var(--color-border-light)] bg-[var(--color-surface-secondary)] xl:block" />}
+      {rightPanelVisible && <RightPanel />}
     </div>
   );
 }
